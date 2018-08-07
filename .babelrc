@@ -1,8 +1,12 @@
 {
-  "presets": ["react-native-stage-0"],
-  "plugins": [
-    "transform-regenerator",
-    "transform-object-assign",
-    "dev-expression"
-  ]
+  "presets": ["react-native"],
+  "plugins": ["transform-regenerator", "transform-object-assign", "dev-expression"],
+  "env": {
+    "test": {},
+    "development-web": { "plugins": ["react-native-web/babel"] },
+    "production-web": { "plugins": ["react-native-web/babel"] },
+    "test:native": {},
+    "development": {},
+    "production": {}
+  }
 }

@@ -1,13 +1,25 @@
-# npm install
+## Install the dependencies
 
-# npm run webpack
+`$ npm install`
 
-# gulp serve
+## Run the web app
 
-# yarn run-ios
+- The web app uses webpack for bundling the React app and gulp for building it.
 
-# yarn run-android
+`$ yarn react` - is a custom script that makes use of `$ npm run webpack` and `$ gulp serve`
 
-* Guides used:
-  http://ihor.burlachenko.com/code-sharing-between-react-and-react-native-applications/
-  http://ccoenraets.github.io/es6-tutorial-react/setup/
+## Run the iOS app
+
+`$ yarn run-ios`
+
+## Run the Android app
+
+`$ yarn run-android`
+
+## Run the linter and flow
+
+`$ yarn prepush`
+
+## Run the Jest tests
+
+`$ yarn test`

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Actions appLaunched should return an app launched action 1`] = `
+Object {
+  "type": "data/APP_LAUNCHED",
+}
+`;
+
+exports[`Actions dataFetchFailure should return a data fetch failure action 1`] = `
+Object {
+  "payload": Object {
+    "error": undefined,
+  },
+  "type": "data/FETCH_FAILURE",
+}
+`;
+
+exports[`Actions dataFetchSuccess should return a data fetch success action 1`] = `
+Object {
+  "payload": undefined,
+  "type": "data/FETCH_SUCCESS",
+}
+`;
+
+exports[`Actions startFetchingData should return a start fetching data action 1`] = `
+Object {
+  "type": "data/START_FETCH",
+}
+`;

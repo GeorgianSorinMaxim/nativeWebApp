@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const gulp = require('gulp');
 const webserver = require('gulp-webserver');
 const del = require('del');

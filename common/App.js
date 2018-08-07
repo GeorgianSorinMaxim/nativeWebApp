@@ -1,13 +1,15 @@
+// @flow
+
 import 'babel-polyfill';
-import React, { Component } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
 
 import type { Store } from 'redux';
 
-import configureStore from './common/redux/configureStore';
-import * as actions from './common/redux/modules/data/actions';
+import configureStore from './redux/configureStore';
+import * as actions from './redux/modules/data/actions';
 
-import HomeScreen from './common/components/HomeScreen';
+import HomeScreenContainer from './components/HomeScreenContainer';
 
 type Props = {};
 type State = {
@@ -36,7 +38,7 @@ export class App extends React.Component<Props, State> {
   renderLoadedApp() {
     return (
       <Provider store={this.store}>
-        <HomeScreen />
+        <HomeScreenContainer />
       </Provider>
     );
   }

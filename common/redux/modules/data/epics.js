@@ -11,20 +11,23 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/observable/from';
 
-import { Observable } from 'rxjs/Observable';
 import { combineEpics } from 'redux-observable';
+import type { Epic } from 'redux-observable';
+import type { Action } from '../../types';
 
 import * as actions from './actions';
 
-const startFetchDataEpic = action$ =>
+export const startFetchDataEpic: Epic<*, Action, any> = action$ =>
   action$.ofType(actions.APP_LAUNCHED).mapTo(actions.startFetchingData());
 
-const fetchDataEpic = action$ =>
+export const fetchDataEpic: Epic<*, Action, any> = action$ =>
   action$.ofType(actions.START_FETCH_DATA).switchMap(() =>
-    fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
+    fetch('https://jsonplaceholder.typicode.com/posts')
       .then(
         response =>
-          response.ok ? response.json() : actions.dataFetchFailure(FETCH_ERROR)
+          response.ok
+            ? response.json()
+            : actions.dataFetchFailure({ error: 'FETCH_ERROR' })
       )
       .then(
         result =>
@@ -32,7 +35,7 @@ const fetchDataEpic = action$ =>
             ? result
             : actions.dataFetchSuccess(result)
       )
-      .catch(() => actions.dataFetchFailure(FETCH_ERROR))
+      .catch(() => actions.dataFetchFailure({ error: 'FETCH_ERROR' }))
   );
 
 export default combineEpics(startFetchDataEpic, fetchDataEpic);

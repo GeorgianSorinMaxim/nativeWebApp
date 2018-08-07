@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reducer should finish fetching data sucessfully 1`] = `
+Object {
+  "entities": Object {},
+  "loading": false,
+}
+`;
+
+exports[`Reducer should finish fetching data with a failure 1`] = `
+Object {
+  "entities": Object {},
+  "error": Object {
+    "error": Object {},
+  },
+  "loading": false,
+}
+`;
+
+exports[`Reducer should start fetching data 1`] = `
+Object {
+  "entities": Object {},
+  "loading": true,
+}
+`;
