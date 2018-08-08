@@ -9,8 +9,9 @@ import {
   ActivityIndicator,
   VirtualizedList
 } from 'react-native';
+import styled from 'styled-components/native';
 
-import { Colours } from '../styles';
+import { Colours, Styles } from '../styles';
 
 const styles = StyleSheet.create({
   container: {
@@ -61,10 +62,15 @@ const styles = StyleSheet.create({
 
 type Props = {
   data: Object,
-  loading: boolean
+  loading: boolean,
+  platform: string
 };
 
 type State = {};
+
+const Wrapper = styled.View`
+  ${Styles.wrapper};
+`;
 
 export class HomeScreen extends Component<Props, State> {
   renderItem = (element: Object) => (
@@ -81,6 +87,10 @@ export class HomeScreen extends Component<Props, State> {
           <View style={styles.content}>
             <Text style={styles.welcome}>Hello 90poe!</Text>
             <Text style={styles.instructions}>This is the 📱 app</Text>
+            <Text style={styles.instructions}>{this.props.platform}</Text>
+            <Wrapper>
+              <Text>This is an element styled with `styled-components`</Text>
+            </Wrapper>
             <VirtualizedList
               style={styles.listContainer}
               getItemCount={data => data.length}

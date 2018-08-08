@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import { Platform } from 'react-primitives';
 
 import HomeScreen from './HomeScreen';
 
@@ -11,7 +12,7 @@ type Props = {
 };
 
 export const HomeScreenContainer = ({ data, loading }: Props) => (
-  <HomeScreen data={data} loading={loading} />
+  <HomeScreen data={data} loading={loading} platform={Platform.OS} />
 );
 
 const mapStateToProps = state => ({
