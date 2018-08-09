@@ -7,7 +7,8 @@ import { HomeScreen } from './HomeScreen';
 describe('HomeScreen', () => {
   const defaultProps = {
     data: [],
-    loading: false
+    loading: false,
+    platform: 'mock-platform'
   };
 
   it('should render', () => {

@@ -22,7 +22,7 @@ export const startFetchDataEpic: Epic<*, Action, any> = action$ =>
 
 export const fetchDataEpic: Epic<*, Action, any> = action$ =>
   action$.ofType(actions.START_FETCH_DATA).switchMap(() =>
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch('https://reqres.in/api/users?per_page=12')
       .then(
         response =>
           response.ok

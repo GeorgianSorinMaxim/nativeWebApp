@@ -1,12 +1,4 @@
 {
-  "presets": ["react-native-stage-0"],
-  "plugins": ["dev-expression"],
-  "env": {
-    "test": {},
-    "development-web": { "plugins": ["react-native-web/babel"] },
-    "production-web": { "plugins": ["react-native-web/babel"] },
-    "test:native": {},
-    "development": {},
-    "production": {}
-  }
+  "presets": ["react-native"],
+  "plugins": ["dev-expression"]
 }

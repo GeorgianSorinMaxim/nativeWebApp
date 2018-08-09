@@ -4,41 +4,9 @@ html {
 
 body {
   height: 100%;
-  background-color: #f5fcff;
+  background-color: #f3f3f3;
 }
 
 li {
   list-style-type: none;
-}
-
-.content {
-  text-align: center;
-}
-
-.container {
-  text-align: center;
-  padding-top: 10%;
-}
-
-.welcome {
-  color: #333333;
-  font-size: 32px;
-  margin-bottom: 32px;
-}
-
-.title {
-  color: #333333;
-  font-size: 32px;
-  margin-bottom: 32px;
-}
-
-.listContainer {
-  align-content: center;
-}
-
-.listElement {
-  text-align: left;
-  min-height: 56;
-  background-color: '#fff';
-  border-top: 1px solid '#bababa';
 }

@@ -3,6 +3,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Platform } from 'react-primitives';
+import { onlyUpdateForKeys } from 'recompose';
 
 import HomeScreen from './HomeScreen';
 
@@ -16,7 +17,7 @@ export const HomeScreenContainer = ({ data, loading }: Props) => (
 );
 
 const mapStateToProps = state => ({
-  data: state.data.entities,
+  data: state.data.entities.data,
   loading: state.data.loading
 });
 
@@ -25,4 +26,7 @@ const HomeScreenContainerWithData = connect(
   {}
 )(HomeScreenContainer);
 
-export default HomeScreenContainerWithData;
+const OptimizedHomeScreenContainer = onlyUpdateForKeys(['data', 'loading'])(
+  HomeScreenContainerWithData
+);
+export default OptimizedHomeScreenContainer;

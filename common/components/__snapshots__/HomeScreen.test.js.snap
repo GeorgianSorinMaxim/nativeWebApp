@@ -5,7 +5,7 @@ exports[`HomeScreen should render 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#F5FCFF",
+      "backgroundColor": "#F3F3F3",
       "flex": 1,
       "justifyContent": "center",
     }
@@ -15,69 +15,65 @@ exports[`HomeScreen should render 1`] = `
     style={
       Object {
         "flex": 1,
-        "marginVertical": 40,
+        "marginTop": 20,
         "width": "100%",
       }
     }
   >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#fff",
+            "borderRadius": 15,
+            "marginBottom": 10,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "marginTop": 10,
+            "paddingBottom": 25,
+            "paddingLeft": 25,
+            "paddingRight": 25,
+            "paddingTop": 25,
+          },
+          undefined,
+        ]
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../common/images/vessel.png",
+          }
+        }
+        style={
+          Object {
+            "borderRadius": 25,
+            "height": 50,
+            "width": 50,
+          }
+        }
+      />
+    </View>
     <Text
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
       style={
-        Object {
-          "fontSize": 20,
-          "margin": 10,
-          "textAlign": "center",
-        }
+        Array [
+          Object {
+            "fontSize": 12,
+            "marginBottom": 15,
+            "marginTop": 15,
+            "textAlign": "center",
+          },
+          undefined,
+        ]
       }
     >
-      Hello 90poe!
+      This is the 📱 app running on 
+      MOCK-PLATFORM
     </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": undefined,
-          "marginBottom": 5,
-          "textAlign": "center",
-        }
-      }
-    >
-      This is the 📱 app
-    </Text>
-    <RCTScrollView
-      data={Array []}
-      disableVirtualization={false}
-      getItem={[Function]}
-      getItemCount={[Function]}
-      horizontal={false}
-      initialNumToRender={25}
-      invertStickyHeaders={undefined}
-      keyExtractor={[Function]}
-      maxToRenderPerBatch={10}
-      onContentSizeChange={[Function]}
-      onEndReachedThreshold={2}
-      onLayout={[Function]}
-      onMomentumScrollEnd={[Function]}
-      onScroll={[Function]}
-      onScrollBeginDrag={[Function]}
-      onScrollEndDrag={[Function]}
-      renderItem={[Function]}
-      scrollEventThrottle={50}
-      stickyHeaderIndices={Array []}
-      style={
-        Object {
-          "marginVertical": 20,
-        }
-      }
-      updateCellsBatchingPeriod={50}
-      windowSize={21}
-    >
-      <View />
-    </RCTScrollView>
   </View>
 </View>
 `;
@@ -87,7 +83,7 @@ exports[`HomeScreen should render loader 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#F5FCFF",
+      "backgroundColor": "#F3F3F3",
       "flex": 1,
       "justifyContent": "center",
     }

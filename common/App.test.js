@@ -11,7 +11,9 @@ const mockStore = {
   subscribe: jest.fn(),
   getState: () => ({
     data: {
-      entities: [],
+      entities: {
+        data: []
+      },
       loading: false
     }
   })

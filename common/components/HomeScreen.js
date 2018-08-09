@@ -3,7 +3,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Styles } from '../Styles';
+import { Styles } from '../styles';
+import Images from '../images';
 
 type Props = {
   data: Object,
@@ -11,30 +12,67 @@ type Props = {
   platform: string
 };
 
-const Wrapper = styled.section`
+const Container = styled.div`
+  ${Styles.container};
+`;
+
+const Content = styled.div`
+  ${Styles.content};
+`;
+
+const TextWrapper = styled.section`
   ${Styles.wrapper};
 `;
 
+const StyledText = styled.p`
+  ${Styles.text};
+`;
+
+const StyledListElement = styled.li`
+  ${Styles.li};
+`;
+
+const StyledList = styled.ul`
+  ${Styles.ul};
+`;
+
+const StyledItemContainer = styled.div`
+  ${Styles.itemContainer};
+`;
+
+const StyledRowElement = styled.p`
+  ${Styles.rowElement};
+`;
+
+const StyledImage = styled.img`
+  ${Styles.avatar};
+`;
+
 const HomeScreen = ({ data, loading, platform }: Props) => (
-  <div className="container">
+  <Container>
     {!loading ? (
-      <div className="content">
-        <h1 className="welcome">Hello 90poe!</h1>
-        <p className="title">This is the 🕸 app</p>
-        <p className="title">{platform}</p>
-        <Wrapper>This is an element styled with `styled-components`</Wrapper>
-        <ul className="listContainer">
+      <Content>
+        <TextWrapper>
+          <img className="vessel" src={Images.vessel} width="50" alt="vessel" />
+        </TextWrapper>
+        <StyledList>
           {data.map(item => (
-            <li className="listElement" key={item.id}>
-              Title: {item.title}
-            </li>
+            <StyledListElement key={item.id}>
+              <StyledItemContainer>
+                <StyledRowElement>
+                  {item.first_name} {item.last_name}
+                </StyledRowElement>
+                <StyledImage src={item.avatar} alt="avatar" />
+              </StyledItemContainer>
+            </StyledListElement>
           ))}
-        </ul>
-      </div>
+        </StyledList>
+        <StyledText>This is the {platform.toUpperCase()} app</StyledText>
+      </Content>
     ) : (
-      <p>Loading ... </p>
+      <StyledText>Loading ... </StyledText>
     )}
-  </div>
+  </Container>
 );
 
 export default HomeScreen;

@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
+  Image,
   StyleSheet,
   ActivityIndicator,
   VirtualizedList
@@ -12,6 +13,7 @@ import {
 import styled from 'styled-components/native';
 
 import { Colours, Styles } from '../styles';
+import Images from '../images';
 
 const styles = StyleSheet.create({
   container: {
@@ -23,20 +25,7 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     width: '100%',
-    marginVertical: 40
-  },
-  welcome: {
-    margin: 10,
-    fontSize: 20,
-    textAlign: 'center'
-  },
-  instructions: {
-    marginBottom: 5,
-    color: Colours.common.textColor,
-    textAlign: 'center'
-  },
-  listContainer: {
-    marginVertical: 20
+    marginTop: 20
   },
   listRow: {
     minHeight: 56,
@@ -56,7 +45,12 @@ const styles = StyleSheet.create({
   },
   right: {
     flex: 1,
-    marginLeft: 40
+    marginLeft: 5
+  },
+  avatar: {
+    width: 50,
+    height: 50,
+    borderRadius: 25
   }
 });
 
@@ -72,11 +66,16 @@ const Wrapper = styled.View`
   ${Styles.wrapper};
 `;
 
+const StyledText = styled.Text`
+  ${Styles.text};
+`;
+
 export class HomeScreen extends Component<Props, State> {
   renderItem = (element: Object) => (
     <View key={`list_{element.item.id}`} style={styles.listRow}>
-      <Text style={styles.left}>Title</Text>
-      <Text style={styles.right}>{element.item.title}</Text>
+      <Text style={styles.left}>{element.item.first_name}</Text>
+      <Text style={styles.right}>{element.item.last_name}</Text>
+      <Image source={{ uri: element.item.avatar }} style={styles.avatar} />
     </View>
   );
 
@@ -85,22 +84,23 @@ export class HomeScreen extends Component<Props, State> {
       <View style={styles.container}>
         {!this.props.loading ? (
           <View style={styles.content}>
-            <Text style={styles.welcome}>Hello 90poe!</Text>
-            <Text style={styles.instructions}>This is the 📱 app</Text>
-            <Text style={styles.instructions}>{this.props.platform}</Text>
             <Wrapper>
-              <Text>This is an element styled with `styled-components`</Text>
+              <Image source={Images.vessel} style={styles.avatar} />
             </Wrapper>
-            <VirtualizedList
-              style={styles.listContainer}
-              getItemCount={data => data.length}
-              getItem={(data, index) => data[index]}
-              keyExtractor={(item, index) => `list_${index}_${item.value}`}
-              renderItem={item => this.renderItem(item)}
-              data={this.props.data}
-              initialNumToRender={25}
-              windowSize={21}
-            />
+            {this.props.data.length > 0 ? (
+              <VirtualizedList
+                getItemCount={data => data.length}
+                getItem={(data, index) => data[index]}
+                keyExtractor={(item, index) => `list_${index}_${item.value}`}
+                renderItem={item => this.renderItem(item)}
+                data={this.props.data}
+                initialNumToRender={25}
+                windowSize={21}
+              />
+            ) : null}
+            <StyledText>
+              This is the 📱 app running on {this.props.platform.toUpperCase()}
+            </StyledText>
           </View>
         ) : (
           <ActivityIndicator />
