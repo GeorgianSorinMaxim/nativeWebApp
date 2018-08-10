@@ -1,6 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
+import DeviceInfo from 'react-native-device-info';
 
 import {
   Text,
@@ -100,6 +101,8 @@ export class HomeScreen extends Component<Props, State> {
             ) : null}
             <StyledText>
               This is the 📱 app running on {this.props.platform.toUpperCase()}
+              {' - '}
+              {DeviceInfo.getModel()}
             </StyledText>
           </View>
         ) : (
