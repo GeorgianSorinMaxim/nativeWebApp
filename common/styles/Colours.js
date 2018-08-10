@@ -3,6 +3,8 @@ const common = {
   backgroundColor: '#F3F3F3',
   border: '#E2E3E5',
   white: '#fff',
+  black: '#000',
+  grey: '#666666',
   greyText: '#666666'
 };
 

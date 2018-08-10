@@ -21,7 +21,7 @@ const styles = {
     marginTop: '15px',
     marginBottom: '15px',
     textAlign: 'center',
-    backgroundColor: Colours.common.grey
+    backgroundColor: Colours.common.backgroundColor
   },
   ul: {
     width: '40%'

@@ -2,9 +2,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 import { Styles } from '../styles';
 import Images from '../images';
+
+console.log(BrowserRouter, Route, Link);
 
 type Props = {
   data: Object,

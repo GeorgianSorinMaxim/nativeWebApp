@@ -1,6 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
+import { createStackNavigator } from 'react-navigation';
 
 import {
   Text,
@@ -109,4 +110,5 @@ export class HomeScreen extends Component<Props, State> {
     );
   }
 }
+
 export default HomeScreen;

@@ -29,4 +29,5 @@ const HomeScreenContainerWithData = connect(
 const OptimizedHomeScreenContainer = onlyUpdateForKeys(['data', 'loading'])(
   HomeScreenContainerWithData
 );
+
 export default OptimizedHomeScreenContainer;

@@ -6,10 +6,10 @@ import { Provider } from 'react-redux';
 
 import type { Store } from 'redux';
 
+import { navMiddleware } from './redux/NavMiddleware';
 import configureStore from './redux/configureStore';
 import * as actions from './redux/modules/data/actions';
-
-import HomeScreenContainer from './components/HomeScreenContainer';
+import NavigationContainer from './components/NavigationContainer';
 
 type Props = {};
 type State = {
@@ -38,7 +38,7 @@ export class App extends React.Component<Props, State> {
   renderLoadedApp() {
     return (
       <Provider store={this.store}>
-        <HomeScreenContainer />
+        <NavigationContainer />
       </Provider>
     );
   }

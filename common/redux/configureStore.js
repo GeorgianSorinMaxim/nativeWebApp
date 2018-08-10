@@ -32,6 +32,6 @@ const getEnhancers = () => {
   return enhancers;
 };
 
-export default function configureStore() {
-  return createStore(rootReducer, getEnhancers());
+export default function configureStore(navMiddleware) {
+  return createStore(rootReducer, getEnhancers(navMiddleware));
 }

@@ -1,5 +1,10 @@
 /* eslint-disable */
 
+const webpack = require('webpack');
+
+let plugins = [];
+plugins.push(new webpack.IgnorePlugin(/react-navigation/));
+
 module.exports = {
   entry: ['babel-polyfill', './index.web.js'],
   output: {
@@ -25,5 +30,6 @@ module.exports = {
   },
   devServer: {
     hot: false
-  }
+  },
+  plugins: plugins
 };
